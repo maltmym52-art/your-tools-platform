@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>منصة أدواتك | شبكة الأدوات الرقمية الذكية والآمنة</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<!-- يفضل أيضاً إضافة مقاسات أخرى للموبايل -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "منصة أدواتك",
+  "url": "https://your-tools-platform.netlify.app/"
+}
+</script>
+
+    <meta name="google-site-verification" content="rafZ_k6XnEI1G-JXHjloWg07AWwqe1TIgC6-ysvwlRw" />
+    <link rel="canonical" href="https://your-tools-platform.netlify.app/" />
+
+    <meta name="description" content="مجموعة أدوات رقمية مصغرة متكاملة تعمل بالكامل داخل متصفحك — خصوصية مطلقة، بدون خوادم، بدون رفع بيانات، وبدون الحاجة لتسجيل حساب. الحل الأسرع لإنتاجيتك اليومية بآمان تام.">
+    <meta name="keywords" content="منصة أدواتك, أدوات رقمية, مولد كلمات المرور, صانع qr كود, حساب كتلة الجسم, حاسبة العمر, تشفير النص, أدوات المطورين, أدوات ويب مجانية, خصوصية البيانات">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://adawatak.com/"> <meta property="og:title" content="منصة أدواتك | شبكة الأدوات الرقمية الذكية والآمنة">
+    <meta property="og:description" content="عشر أدوات صغيرة، مهمة واحدة: لا تترك أثراً على أي خادم. كل ما تحتاجه من أدوات إنتاجية في مكان واحد وبخصوصية محلية 100%.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="منصة أدواتك">
+    <meta property="og:image" content="https://img.icons8.com/fluency/384/toolbox.png">
+    <meta property="og:locale" content="ar_AR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="منصة أدواتك | شبكة الأدوات الرقمية الذكية والآمنة">
+    <meta name="twitter:description" content="أدوات ويب مصغرة وسريعة تعمل محلياً بالكامل دون رفع بياناتك لأي خوادم خارجية.">
+    <meta name="twitter:image" content="https://img.icons8.com/fluency/384/toolbox.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/fluency/32/toolbox.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://img.icons8.com/fluency/48/toolbox.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://img.icons8.com/fluency/180/toolbox.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0b0f19;
+        }
+        .bg-dark-card { background-color: #111827; }
+        .modal { transition: opacity 0.25s ease; }
+        .modal-active { overflow: hidden; }
+
+        /* شبكة نقطية خفيفة في الخلفية */
+        .grid-bg {
+            background-image: radial-gradient(rgba(99,102,241,0.18) 1px, transparent 1px);
+            background-size: 26px 26px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
+        }
+        .live-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .live-dot { animation: none; }
+        }
+
+        a.tool-card:focus-visible, button:focus-visible {
+            outline: 2px solid #818cf8;
+            outline-offset: 2px;
+        }
+
+        .counter-num {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary i { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="text-slate-300 min-h-screen flex flex-col justify-between text-base">
+
+    <nav class="border-b border-slate-800 bg-slate-900/40 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xl shadow-lg shadow-indigo-500/20">
+                    <i class="fa-solid fa-toolbox text-base"></i>
+                </div>
+                <span class="text-xl md:text-2xl font-black bg-gradient-to-l from-indigo-400 to-purple-400 bg-clip-text text-transparent">منصة أدواتك</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm bg-indigo-500/10 text-indigo-400 px-3 py-1.5 rounded-full border border-indigo-500/20">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot"></span>
+                أدوات محلية وآمنة 100%
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden">
+        <div class="grid-bg absolute inset-0 -z-10 h-[420px] w-full"></div>
+        <div class="max-w-4xl mx-auto text-center px-4 pt-16 pb-10 relative">
+            <span class="bg-indigo-500/10 text-indigo-400 text-sm font-medium px-3 py-1.5 rounded-full border border-indigo-500/20">
+                الموقع الرسمي للمنصة
+            </span>
+            <h1 class="text-4xl md:text-5xl font-black mt-6 leading-tight text-white">
+                عشر أدوات صغيرة، مهمة واحدة <br>
+                <span class="bg-gradient-to-l from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">لا تترك أثراً على أي خادم</span>
+            </h1>
+            
+            <div class="ad-wrapper my-4">
+                <script async="async" data-cfasync="false" src="https://pl30208707.effectivecpmnetwork.com/76d8598bde131e24fef435eca0e9e7a3/invoke.js"></script>
+                <div id="container-76d8598bde131e24fef435eca0e9e7a3"></div>
+            </div>
+            
+            <p class="text-slate-400 mt-5 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                كل أداة في هذه الشبكة تعمل بالكامل داخل متصفحك. ما تكتبه يبقى على جهازك فقط — لا حفظ، لا رفع، لا تسجيل. افتح أي أداة وابدأ فوراً.
+            </p>
+
+            <div class="flex items-center justify-center gap-6 md:gap-10 mt-8 text-center" id="stats-bar">
+                <div>
+                    <div class="text-2xl font-black text-white counter-num" id="visits-count">—</div>
+                    <div class="text-xs text-slate-500 mt-1">زيارة إلى المنصة</div>
+                </div>
+                <div class="w-px h-8 bg-slate-800"></div>
+                <div>
+                    <div class="text-2xl font-black text-white counter-num" id="tools-uses-count">—</div>
+                    <div class="text-xs text-slate-500 mt-1">فتحة أداة مسجّلة محلياً</div>
+                </div>
+                <div class="w-px h-8 bg-slate-800"></div>
+                <div>
+                    <div class="text-2xl font-black text-white">10</div>
+                    <div class="text-xs text-slate-500 mt-1">أدوات في الشبكة</div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3">* الإحصائيات محسوبة محلياً في متصفحك فقط، ولا تُرسل أو تُشارك مع أي خادم.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mb-20 w-full flex flex-col gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid"></div>
+        
+        <hr class="border-slate-800">
+
+        <section class="max-w-4xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-black text-white text-center mb-2">لماذا منصة أدواتك هي الخيار الأفضل؟</h2>
+            <p class="text-center text-slate-400 text-base mb-8">نُقدم تجربة رقمية فريدة تدمج بين الإنتاجية والآمان المطلق بدون تعقيدات.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-dark-card border border-slate-800 p-6 rounded-2xl flex gap-4">
+                    <div class="text-indigo-400 text-2xl"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-1">سرعة فائقة جداً</h3>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed">جميع الأدوات تعمل مباشرة في متصفحك فور نقرك عليها، لا حاجة للانتظار أو تحميل ملفات خارجية لتبدأ العمل.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-card border border-slate-800 p-6 rounded-2xl flex gap-4">
+                    <div class="text-indigo-400 text-2xl"><i class="fa-solid fa-user-shield"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-1">خصوصية تامة محلياً</h3>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed">لا نحتفظ بأي بيانات أو نصوص مدخلة. كل العمليات البرمجية والحسابية تتم محلياً 100% داخل جهازك دون رفع أي شيء.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-slate-800 p-6 rounded-2xl flex gap-4">
+                    <div class="text-indigo-400 text-2xl"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-1">متوافق مع كل الأجهزة</h3>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed">تصميم مرن ومتجاوب بالكامل (Responsive) ليعمل بسلاسة فائقة سواء كنت تصفح من هاتفك الذكي، جهازك اللوحي، أو حاسوبك.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-slate-800 p-6 rounded-2xl flex gap-4">
+                    <div class="text-indigo-400 text-2xl"><i class="fa-solid fa-rectangle-ad"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-1">أدوات مجانية بدون حساب</h3>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed">على عكس المنصات الأخرى، نوفر لك وصولاً كاملاً وغير محدود لكافة الأدوات بشكل مجاني دون الحاجة لإنشاء حساب أو تسجيل دخول.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-black text-white text-center mb-2">الأسئلة الشائعة</h2>
+            <p class="text-center text-slate-400 text-base mb-8">إجابات واضحة ومباشرة عن أبرز الاستفسارات حول منصة أدواتك.</p>
+            
+            <div class="space-y-4">
+                <details class="group bg-dark-card border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-5 font-bold text-base text-white cursor-pointer select-none hover:bg-slate-800/50 list-none">
+                        <span>هل أدوات منصة أدواتك مجانية تماماً؟</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-500 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-sm md:text-base text-slate-400 border-t border-slate-800/40 leading-relaxed">
+                        نعم، جميع الأدوات المتوفرة على منصة أدواتك مجانية 100% وبدون أي اشتراكات أو قيود خفية، ويمكنك استخدامها في أي وقت ومن أي جهاز مباشرة.
+                    </div>
+                </details>
+
+                <details class="group bg-dark-card border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-5 font-bold text-base text-white cursor-pointer select-none hover:bg-slate-800/50 list-none">
+                        <span>ما هي أبرز الأدوات المتوفرة في المنصة؟</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-500 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-sm md:text-base text-slate-400 border-t border-slate-800/40 leading-relaxed">
+                        تضم المنصة شبكة أدوات رقمية متنوعة تشمل: مولد كلمات المرور القوية، صانع كود QR الذكي، أدوات المطورين كـ Base64 و URL Encode/Decode، حاسبة كتلة الجسم (BMI)، حاسبة العمر الدقيقة، عداد الحروف والكلمات، ومولد المعرفات الفريدة UUID و SHA-256 Hash.
+                    </div>
+                </details>
+
+                <details class="group bg-dark-card border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-5 font-bold text-base text-white cursor-pointer select-none hover:bg-slate-800/50 list-none">
+                        <span>هل تقوم المنصة بحفظ نصوصي أو بياناتي الخاصة؟</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-500 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-sm md:text-base text-slate-400 border-t border-slate-800/40 leading-relaxed">
+                        مطلقاً! بنيت المنصة على مبدأ "Client-Side Processing"، مما يعني أن جميع النصوص والمعالجات تتم محلياً بالكامل داخل متصفحك. لا توجد خوادم تستقبل بياناتك، مما يضمن لك أماناً وخصوصية تامة بنسبة 100%.
+                    </div>
+                </details>
+
+                <details class="group bg-dark-card border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-5 font-bold text-base text-white cursor-pointer select-none hover:bg-slate-800/50 list-none">
+                        <span>هل يمكنني تشغيل الأدوات واستخدامها عبر الهاتف المحمول؟</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-500 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-sm md:text-base text-slate-400 border-t border-slate-800/40 leading-relaxed">
+                        نعم وبكل تأكيد، موقعنا مصمم ليكون متوافقاً بالكامل مع الهواتف الذكية (آيفون وأندرويد) والأجهزة اللوحية، ليوفر واجهة استخدام مريحة وسريعة متكاملة تدعم اتجاه الكتابة العربي RTL بشكل افتراضي.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto w-full bg-dark-card/40 border border-slate-800 p-6 rounded-2xl">
+            <h2 class="text-xl font-bold text-white mb-3">حول منصة أدواتك المجانية أونلاين بالعربية</h2>
+            <div class="text-sm md:text-base text-slate-400 space-y-3 leading-relaxed">
+                <p>تضم <strong>منصة أدواتك</strong> باقة ممتازة من أفضل أدوات الويب المصغرة والمجانية والمطورة خصيصاً للمستخدم والمطور العربي أونلاين. نوفر حلولاً يومية سريعة كـ <span class="text-indigo-400 font-medium">عداد الكلمات</span> الذي يمنحك إحصائيات فورية للنصوص، و<span class="text-indigo-400 font-medium">أدوات تحويل وتشفير النصوص</span> الحساسة بأمان تام.</p>
+                <p>كما نساعد المسوقين وأصحاب المواقع عبر <span class="text-indigo-400 font-medium">مولد الرموز الذكي QR Code</span> لإنشاء باركود سريع ومخصص، إلى جانب أدوات الصحة والحسابات الشخصية مثل <span class="text-indigo-400 font-medium">حاسبة العمر الدقيقة</span> و<span class="text-indigo-400 font-medium">حاسبة مؤشر كتلة الجسم BMI</span>، كل ذلك بواجهة عصرية ومريحة للعين وبدون أي تعقيد في الاستخدام.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="border-t border-slate-800 bg-slate-950/40 py-8 text-center text-sm text-slate-500 w-full">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-5">
+            <div>
+                &copy; 2026 جميع الحقوق محفوظة لـ منصة أدواتك.
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-400 font-medium">
+                <button onclick="toggleModal('about-modal')" class="hover:text-indigo-400 transition-colors cursor-pointer">من نحن</button>
+                <button onclick="toggleModal('privacy-modal')" class="hover:text-indigo-400 transition-colors cursor-pointer">سياسة الخصوصية</button>
+                <button onclick="toggleModal('terms-modal')" class="hover:text-indigo-400 transition-colors cursor-pointer">شروط الاستخدام</button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="about-modal" class="modal opacity-0 pointer-events-none fixed inset-0 w-full h-full flex items-center justify-center z-50">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onclick="toggleModal('about-modal')"></div>
+        <div class="modal-container bg-slate-900 border border-slate-800 w-11/12 md:max-w-lg mx-auto rounded-2xl shadow-2xl z-50 overflow-y-auto max-h-[85vh]">
+            <div class="modal-content py-6 text-right px-6">
+                <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+                    <p class="text-xl font-bold text-white"><i class="fa-solid fa-circle-info text-indigo-400 ml-2"></i>من نحن</p>
+                    <button onclick="toggleModal('about-modal')" class="text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="my-5 text-base text-slate-300 space-y-4 leading-relaxed">
+                    <p>مرحباً بك في <strong>منصة أدواتك</strong>.</p>
+                    <p>نحن منصة متخصصة في تطوير الأدوات الرقمية المصغرة والمستقلة التي تلبي احتياجات المستخدم اليومية بأعلى كفاءة ممكنة وبدون تعقيد.</p>
+                    <p>فلسفتنا ترتكز على محورين أساسيين: <strong>السرعة الفائقة</strong> و <strong>الخصوصية المطلقة</strong>. لذلك، نحرص على برمجة أدواتنا لتعمل محلياً بالكامل لكي نضمن عدم انتهاك بياناتك أو رفعها لأي طرف خارجي.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="modal opacity-0 pointer-events-none fixed inset-0 w-full h-full flex items-center justify-center z-50">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onclick="toggleModal('privacy-modal')"></div>
+        <div class="modal-container bg-slate-900 border border-slate-800 w-11/12 md:max-w-xl mx-auto rounded-2xl shadow-2xl z-50 overflow-y-auto max-h-[85vh]">
+            <div class="modal-content py-6 text-right px-6">
+                <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+                    <p class="text-xl font-bold text-white"><i class="fa-solid fa-user-shield text-indigo-400 ml-2"></i>سياسة الخصوصية</p>
+                    <button onclick="toggleModal('privacy-modal')" class="text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="my-5 text-sm md:text-base text-slate-300 space-y-4 leading-relaxed">
+                    <p class="font-bold text-white text-base">1. معالجة البيانات محلياً (Client-Side)</p>
+                    <p>نهتم جداً بخصوصية بياناتك في منصة أدواتك. جميع العمليات التي تقوم بها داخل شبكة أدواتنا تتم بالكامل داخل متصفحك الشخصي. لا نقوم بحفظ، إرسال، أو مشاركة أي بيانات مدخلة مع أي خادم خارجي.</p>
+
+                    <p class="font-bold text-white text-base">2. عداد الزيارات المحلي</p>
+                    <p>عداد الزيارات وعدد فتحات الأدوات الظاهر في الصفحة الرئيسية يُحسب ويُخزَّن بالكامل داخل متصفحك (Local Storage) ولا يُرسل إلى أي خادم، ولا يُستخدم لتتبعك بين الأجهزة أو المواقع.</p>
+
+                    <p class="font-bold text-white text-base">3. ملفات تعريف الارتباط وإعلانات الطرف الثالث</p>
+                    <p>قد يستعين موقعنا بشركات إعلان تابعة لأطراف ثالثة (مثل Google AdSense) لعرض الإعلانات عند زيارتك للموقع. تستخدم هذه الشركات ملفات تعريف الارتباط (Cookies) لتقديم إعلانات مخصصة بناءً على زياراتك السابقة لموقعنا أو لمواقع أخرى.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="terms-modal" class="modal opacity-0 pointer-events-none fixed inset-0 w-full h-full flex items-center justify-center z-50">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onclick="toggleModal('terms-modal')"></div>
+        <div class="modal-container bg-slate-900 border border-slate-800 w-11/12 md:max-w-xl mx-auto rounded-2xl shadow-2xl z-50 overflow-y-auto max-h-[85vh]">
+            <div class="modal-content py-6 text-right px-6">
+                <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+                    <p class="text-xl font-bold text-white"><i class="fa-solid fa-file-contract text-indigo-400 ml-2"></i>شروط الاستخدام</p>
+                    <button onclick="toggleModal('terms-modal')" class="text-slate-400 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="my-5 text-sm md:text-base text-slate-300 space-y-4 leading-relaxed">
+                    <p>باستخدامك لموقع منصة أدواتك، فإنك توافق على الشروط التالية:</p>
+                    <p class="font-bold text-white text-base">1. الاستخدام المشروع</p>
+                    <p>يجب استخدام هذه الأدوات في الأغراض القانونية والمشروعة فقط، ويُمنع تماماً محاولة إساءة استخدام الأدوات لإلحاق الضرر بالآخرين.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== بيانات الأدوات ====================
+        const TOOLS = [
+            {
+                icon: "fa-key",
+                title: " مولد كلمات المرور",
+                desc: "توليد كلمات مرور عشوائية وقوية جداً محلياً مع تقدير فوري لصعوبة كسرها والإنتروبيا.",
+                url: "https://password-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-qrcode",
+                title: "مولد رموز QR الذكي",
+                desc: "تحويل الروابط والنصوص إلى رموز استجابة سريعة QR قابلة للتحميل والقراءة الفورية باللغة العربية.",
+                url: "https://qr-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-calculator",
+                title: "Word Counter",
+                desc: "حساب عدد الكلمات والأسطر والفقرات في النصوص بدقة وسرعة وبدون رفع أي نص.",
+                url: "https://counter-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-text-width",
+                title: "Character Counter",
+                desc: "معرفة عدد الحروف والرموز والمساحات في نصوصك بشكل فوري مع تصفية شاملة.",
+                url: "https://character-counter-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-code",
+                title: "Base64 Encode/Decode",
+                desc: "تشفير النصوص والبيانات إلى صيغة Base64 وفك تشفيرها بأمان تام وتوافقية كاملة.",
+                url: "https://base64-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-link",
+                title: "URL Encode/Decode",
+                desc: "تحويل ترميز الروابط المتصفحة لجعلها متوافقة مع الويب ومعالجة الرموز الخاصة واللغة العربية.",
+                url: "https://url-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-fingerprint",
+                title: "UUID Generator",
+                desc: "توليد معرّفات فريدة عشوائياً (UUID v4) مفيدة لتطوير قواعد البيانات والبرمجيات.",
+                url: "https://uuid-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-shield-alt",
+                title: "SHA-256 Generator",
+                desc: "حساب قيم الـ Hash والتوقيع الرقمي بنظام SHA-256 الآمن لأي نص مدخل محلياً.",
+                url: "https://sha-256-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-weight-scale",
+                title: "BMI Calculator",
+                desc: "احسب مؤشر كتلة جسمك بناءً على الوزن والطول وتعرّف على تصنيف حالتك الصحية.",
+                url: "https://bmi-your-tools-platform.netlify.app/"
+            },
+            {
+                icon: "fa-cake-candles",
+                title: "Age Calculator",
+                desc: "حساب عمرك الدقيق بالتفصيل بالسنوات والأشهر والأيام والأسابيع بلمحة واحدة.",
+                url: "https://age-cal-your-tools-platform.netlify.app/"
+            }
+        ];
+
+        function renderTools() {
+            const grid = document.getElementById('tools-grid');
+            grid.innerHTML = TOOLS.map((tool, i) => `
+                <a href="${tool.url}"
+                   onclick="logToolUse(${i})"
+                   class="tool-card group bg-dark-card border border-slate-800 hover:border-indigo-500/50 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-indigo-500/10 text-indigo-400 w-12 h-12 rounded-xl flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid ${tool.icon}"></i>
+                            </div>
+                            <span class="bg-emerald-500/10 text-emerald-400 text-sm px-2.5 py-1 rounded-md font-medium border border-emerald-500/20">نشط الآن</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">${tool.title}</h3>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">${tool.desc}</p>
+                    </div>
+                    <div class="mt-6 flex items-center text-sm font-medium text-indigo-400 group-hover:text-indigo-300">
+                        افتح الأداة
+                        <i class="fa-solid fa-arrow-left mr-2 text-xs transition-transform group-hover:-translate-x-1"></i>
+                    </div>
+                </a>
+            `).join('');
+        }
+        renderTools();
+
+        // ==================== عداد محلي (بدون أي خادم) ====================
+        const STORAGE_KEYS = { visits: 'adawatak_visits', uses: 'adawatak_tool_uses' };
+
+        function readCount(key) {
+            const v = parseInt(localStorage.getItem(key) || '0', 10);
+            return Number.isFinite(v) ? v : 0;
+        }
+        function writeCount(key, value) {
+            localStorage.setItem(key, String(value));
+        }
+        function animateNumber(el, from, to, duration = 600) {
+            const start = performance.now();
+            function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const value = Math.round(from + (to - from) * progress);
+                el.textContent = value.toLocaleString('ar-EG');
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        function initCounters() {
+            try {
+                const visits = readCount(STORAGE_KEYS.visits) + 1;
+                writeCount(STORAGE_KEYS.visits, visits);
+                const uses = readCount(STORAGE_KEYS.uses);
+
+                animateNumber(document.getElementById('visits-count'), 0, visits);
+                animateNumber(document.getElementById('tools-uses-count'), 0, uses);
+            } catch (e) {
+                document.getElementById('visits-count').textContent = '—';
+                document.getElementById('tools-uses-count').textContent = '—';
+            }
+        }
+        initCounters();
+
+        function logToolUse(index) {
+            try {
+                const uses = readCount(STORAGE_KEYS.uses) + 1;
+                writeCount(STORAGE_KEYS.uses, uses);
+            } catch (e) { /* تجاهل بصمت */ }
+        }
+
+        // ==================== النوافذ المنبثقة ====================
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const body = document.querySelector('body');
+
+            if (modal.classList.contains('pointer-events-none')) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+                body.classList.add('modal-active');
+            } else {
+                modal.classList.remove('opacity-100');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                body.classList.remove('modal-active');
+            }
+        }
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                const activeModal = document.querySelector('.modal:not(.pointer-events-none)');
+                if (activeModal) {
+                    toggleModal(activeModal.id);
+                }
+            }
+        };
+    </script>
+</body>
+</html>
